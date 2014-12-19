@@ -1,0 +1,25 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+*{
+margin: 0px;
+}
+html,body{
+height: 100%;	
+}
+#container
+{
+min-width: 100%;
+min-height: 100%;
+}
+#colorName
+{
+    position:absolute;
+     width:300px;
+     height:150px;
+     z-index:15;
+     top:50%;
+     left:50%;
+     margin:-100px 0 0 -170px;
+     font-size: 40px;
+     color: white;
+     font-family: 'Oxygen', sans-serif;
+}
