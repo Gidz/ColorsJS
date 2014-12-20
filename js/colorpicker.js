@@ -14,6 +14,20 @@ a -> alpha value. It's kept as constant here
 var container = document.getElementById("container");
 var display = document.getElementById("colorName");
 var details = document.getElementById("details");
+var pallet = document.getElementById("color");
+
+
+var currentColor={
+	hue:0,
+	saturation:52,
+	lightness:0,
+	a:1,
+	colorAsString: function(){
+		var c = "hsla("+this.hue+","+this.saturation+"%,"+this.lightness+"%,"+this.a+")";
+		return c;
+	}	
+
+};
 
 //==================================================
 //Function to track cursor position
@@ -30,7 +44,6 @@ document.onmousemove = function(e){
 //==================================================
 function updateColor() {
 //Object to hold the Current color
-var currentColor={hue:0,saturation:52,lightness:0,a:1};
 
 //get window width and height
 var w =container.clientWidth;
@@ -58,14 +71,22 @@ currentColor.lightness=Math.floor(currentColor.lightness);
 currentColor.hue=Math.floor(currentColor.hue);
 
 //Calculate the color string
-var color="hsla("+currentColor.hue+","+currentColor.saturation+"%,"+currentColor.lightness+"%,"+currentColor.a+")";
+//var color="hsla("+currentColor.hue+","+currentColor.saturation+"%,"+currentColor.lightness+"%,"+currentColor.a+")";
 
 //set the color as background
-container.style.backgroundColor=color;
+container.style.backgroundColor=currentColor.colorAsString();
 
 //update the display text
-display.innerHTML=color;
+//display.innerHTML=currentColor.colorAsString();
 }
 
 //setting the frequency to run the updateColor function
 setInterval("updateColor()", 10);
+
+//==================================================
+//Function to track cursor position
+//==================================================
+document.onclick = function(){
+display.innerHTML=currentColor.colorAsString();  
+pallet.style.backgroundColor=currentColor.colorAsString();
+}

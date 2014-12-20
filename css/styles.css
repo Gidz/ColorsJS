@@ -15,11 +15,33 @@ min-height: 100%;
     position:absolute;
      width:300px;
      height:150px;
-     z-index:15;
+     z-index:10;
      top:50%;
      left:50%;
      margin:-100px 0 0 -170px;
      font-size: 40px;
      color: white;
      font-family: 'Oxygen', sans-serif;
+}
+
+#colorPallet
+{
+    position:absolute;
+     width:500px;
+     height:80px;
+     z-index:15;
+     top:5%;
+     left:5%;
+     background-color: rgba(0,0,0,0.5);
+     border-radius: 5px;
+     border:#fff solid 2px;
+}
+#color{
+position:absolute;
+display: inline-block;
+     width:100px;
+     height:80px;
+     z-index:15;
+ background-color: rgba(10,50,60,0.5);
+ 
 }
