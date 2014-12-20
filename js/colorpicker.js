@@ -84,7 +84,7 @@ container.style.backgroundColor=currentColor.colorAsString();
 setInterval("updateColor()", 10);
 
 //==================================================
-//Function to track cursor position
+//Function to pick a color
 //==================================================
 document.onclick = function(){
 display.innerHTML=currentColor.colorAsString();  
