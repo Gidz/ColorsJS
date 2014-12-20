@@ -14,7 +14,7 @@ a -> alpha value. It's kept as constant here
 var container = document.getElementById("container");
 var display = document.getElementById("colorName");
 var details = document.getElementById("details");
-var pallet = document.getElementById("color");
+var pallet = document.getElementById("colorPallet");
 
 
 var currentColor={
@@ -23,9 +23,8 @@ var currentColor={
 	lightness:0,
 	a:1,
 	colorAsString: function(){
-		var c = "hsla("+this.hue+","+this.saturation+"%,"+this.lightness+"%,"+this.a+")";
-		return c;
-	}	
+		return "hsla("+this.hue+","+this.saturation+"%,"+this.lightness+"%,"+this.a+")";
+		}	
 
 };
 
@@ -84,9 +83,12 @@ container.style.backgroundColor=currentColor.colorAsString();
 setInterval("updateColor()", 10);
 
 //==================================================
-//Function to track cursor position
+//Function to pick color
 //==================================================
 document.onclick = function(){
 display.innerHTML=currentColor.colorAsString();  
-pallet.style.backgroundColor=currentColor.colorAsString();
+var a = document.createElement('li');
+pallet.appendChild(a);
+a.className ='color';
+a.style.backgroundColor=currentColor.colorAsString();
 }

@@ -28,20 +28,20 @@ min-height: 100%;
 {
     position:absolute;
      width:500px;
-     height:80px;
      z-index:15;
      top:5%;
      left:5%;
-     background-color: rgba(0,0,0,0.5);
-     border-radius: 5px;
-     border:#fff solid 2px;
+     background-color: rgba(255,255,255,1);
+ list-style:none;
+    padding-left:0;
+     
 }
-#color{
-position:absolute;
+.color{
+position:relative;
 display: inline-block;
-     width:100px;
-     height:80px;
-     z-index:15;
- background-color: rgba(10,50,60,0.5);
- 
+width:100px;
+height:200px;
+z-index:15;
+background-color: rgba(10,50,60,0.5);
+
 }
