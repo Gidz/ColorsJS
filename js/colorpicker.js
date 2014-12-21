@@ -76,7 +76,7 @@ currentColor.hue=Math.floor(currentColor.hue);
 container.style.backgroundColor=currentColor.colorAsString();
 
 //update the display text
-//display.innerHTML=currentColor.colorAsString();
+display.innerHTML=currentColor.colorAsString();
 }
 
 //setting the frequency to run the updateColor function
@@ -86,7 +86,7 @@ setInterval("updateColor()", 10);
 //Function to pick color
 //==================================================
 document.onclick = function(){
-display.innerHTML=currentColor.colorAsString();  
+
 var a = document.createElement('li');
 pallet.appendChild(a);
 a.className ='color';
