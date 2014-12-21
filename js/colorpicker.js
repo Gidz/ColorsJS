@@ -32,9 +32,9 @@ var currentColor={
 //Function to track cursor position
 //==================================================
 var cursorPos ={X : 0 ,Y : 0};
-document.onmousemove = function(e){
-    cursorPos.X = e.pageX;
-    cursorPos.Y = e.pageY;
+document.onmousemove = function(container){
+    cursorPos.X = container.pageX;
+    cursorPos.Y = container.pageY;
 }
 
 
@@ -91,4 +91,7 @@ var a = document.createElement('li');
 pallet.appendChild(a);
 a.className ='color';
 a.style.backgroundColor=currentColor.colorAsString();
+
+document.style.marginLeft="150px";
+
 }
