@@ -22,9 +22,9 @@ var colorDisplay = document.getElementById("colorName");
 var currentColor={
 	hue:0,
 	saturation:52,
-	lightness:0,
+	lightness:50,
 	a:1,
-	colorAsString: function(){
+	colorInHSL: function(){
 		return "hsla("+this.hue+","+this.saturation+"%,"+this.lightness+"%,"+this.a+")";
 		},
 		
@@ -85,7 +85,7 @@ currentColor.hue=Math.floor(currentColor.hue);
 //var color="hsla("+currentColor.hue+","+currentColor.saturation+"%,"+currentColor.lightness+"%,"+currentColor.a+")";
 
 //set the color as background
-container.style.backgroundColor=currentColor.colorAsString();
+container.style.backgroundColor=currentColor.colorInHSL();
 
 //update the display text
 display.innerHTML="Click to Save<br>"+"#"+currentColor.colorInHEX();
@@ -104,7 +104,7 @@ container.onclick = function(){
 var a = document.createElement('li');
 pallet.appendChild(a);
 a.className ='color';
-a.style.backgroundColor=currentColor.colorAsString();
+a.style.backgroundColor=currentColor.colorInHSL();
 a.innerHTML=currentColor.colorInRGB()+"<hr>"+"#"+currentColor.colorInHEX();
 if (currentColor.lightness<=50) {
 	a.style.color="white";
@@ -119,7 +119,7 @@ container.onclick = function(){
 var a = document.createElement('li');
 pallet.appendChild(a);
 a.className ='color';
-a.style.backgroundColor=currentColor.colorAsString();
+a.style.backgroundColor=currentColor.colorInHSL();
 a.innerHTML=currentColor.colorInRGB()+"<hr>"+"#"+currentColor.colorInHEX();
 if (currentColor.lightness<=50) {
 	a.style.color="white";
@@ -133,7 +133,7 @@ colorDisplay.onclick = function(){
 var a = document.createElement('li');
 pallet.appendChild(a);
 a.className ='color';
-a.style.backgroundColor=currentColor.colorAsString();
+a.style.backgroundColor=currentColor.colorInHSL();
 a.innerHTML=currentColor.colorInRGB()+"<hr>"+"#"+currentColor.colorInHEX();
 a.style.color="white";
 }
@@ -208,3 +208,24 @@ function toHex(n) {
  return "0123456789ABCDEF".charAt((n-n%16)/16)
       + "0123456789ABCDEF".charAt(n%16);
 }
+
+//==================================================
+//the PopUp Function
+//==================================================
+var popUp = document.getElementById("screenCover");
+var help = document.getElementById("help");
+var closeBtn=document.getElementById("popUpClose");
+var h=document.getElementById("popUpHeading");
+var c=document.getElementById("popUpContent");
+
+
+help.onclick = function () {
+	popUp.style.display='block';
+	h.innerHTML="HELP TEXT";
+	c.innerHTML="";
+}
+closeBtn.onclick = function () {
+	popUp.style.display='none';
+	
+}
+

@@ -17,6 +17,18 @@ margin:2px auto;
     background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
     background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
 }
+
+.hrAlt{
+width: 70%;
+margin:2px auto;
+/* Gradient transparent - color - transparent */
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+    background-image:      -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+}
 #container
 {
 min-width: 100%;
@@ -87,4 +99,49 @@ z-index:15;
 background-color: rgba(10,50,60,0.5);
 text-align: center;
 }
-
+/*PopUp*/
+#screenCover
+{
+min-width: 100%;
+min-height: 100%;
+background-color: rgba(0,0,0,0.8);
+position: absolute;
+top: 0%;
+left: 0%;
+display: none;
+}
+#popUp
+{
+min-width: 50%;
+min-height: 50%;
+padding: 10px;
+color: rgba(255,255,255,1);
+background-color: rgba(0,0,0,1);
+position: absolute;
+top: 0%;
+left: 0%;
+margin-left: 25%;
+margin-top: 15%;
+border-radius:15px;
+}
+#popUpHeading
+{
+text-align: center;
+}
+/* #popUpContent
+{
+background-color: white;
+color: black;
+padding: 10px;
+border-radius:15px;
+} */
+#popUpClose
+{
+position: absolute;
+top: 0px;
+right:0px; 
+}
+#popUpClose:hover
+{
+cursor: pointer;
+}
