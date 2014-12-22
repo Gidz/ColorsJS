@@ -25,15 +25,23 @@ min-height: 80%;
 #colorName
 {
     position:absolute;
-     width:300px;
-     height:150px;
      z-index:10;
-     top:50%;
+     top:0%;
      left:50%;
-     margin:-100px 0 0 -170px;
-     font-size: 40px;
+     width: 150px;
+     margin-left: -75px;
+     text-align: center;
+     font-size: 15px;
      color: white;
+     padding: 5px;
      font-family: 'Oxygen', sans-serif;
+     background-color: rgba(0,0,0,0.5);
+     border-radius: 0px 0px 15px 15px;
+}
+
+#colorName:hover
+{
+cursor: pointer;
 }
 
 #colorPallet

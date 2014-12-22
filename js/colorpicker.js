@@ -15,7 +15,7 @@ var container = document.getElementById("container");
 var display = document.getElementById("colorName");
 var details = document.getElementById("details");
 var pallet = document.getElementById("colorPallet");
-var mover = document.getElementById("cph");
+var colorDisplay = document.getElementById("colorName");
 
 
 
@@ -88,7 +88,7 @@ currentColor.hue=Math.floor(currentColor.hue);
 container.style.backgroundColor=currentColor.colorAsString();
 
 //update the display text
-display.innerHTML=currentColor.colorAsString();
+display.innerHTML="Click to Save<br>"+"#"+currentColor.colorInHEX();
 }
 
 //setting the frequency to run the updateColor function
@@ -115,6 +115,28 @@ else {
 }
 }
 
+container.onclick = function(){
+var a = document.createElement('li');
+pallet.appendChild(a);
+a.className ='color';
+a.style.backgroundColor=currentColor.colorAsString();
+a.innerHTML=currentColor.colorInRGB()+"<hr>"+"#"+currentColor.colorInHEX();
+if (currentColor.lightness<=50) {
+	a.style.color="white";
+}
+else {
+	a.style.color="black";
+}
+}
+//Not wanting to lose a small range of colors in the top portion
+colorDisplay.onclick = function(){
+var a = document.createElement('li');
+pallet.appendChild(a);
+a.className ='color';
+a.style.backgroundColor=currentColor.colorAsString();
+a.innerHTML=currentColor.colorInRGB()+"<hr>"+"#"+currentColor.colorInHEX();
+a.style.color="white";
+}
 //==================================================
 //Function to convert HSL to RGB
 //This script is taken from
