@@ -173,11 +173,11 @@ function hsl2rgb (h, s, l) {
     return { r: r, g: g, b: b }
 
 }
-
-
-
-
-
+//==================================================
+//Function to convert RGB to HEX
+//This script is taken from
+//http://www.javascripter.net/faq/rgbtohex.htm
+//==================================================
 function rgbToHex(R,G,B) {return toHex(R)+toHex(G)+toHex(B)}
 function toHex(n) {
  n = parseInt(n,10);
