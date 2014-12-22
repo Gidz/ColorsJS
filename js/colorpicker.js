@@ -92,5 +92,9 @@ var a = document.createElement('li');
 pallet.appendChild(a);
 a.className ='color';
 a.style.backgroundColor=currentColor.colorAsString();
-a.innerHTML="<input type=\"text\" value="+currentColor.colorAsString()+" disabled></input>";
+a.innerHTML=" "+currentColor.colorAsString()+"";
 }
+
+
+
+
