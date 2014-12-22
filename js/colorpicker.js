@@ -29,8 +29,13 @@ var currentColor={
 		},
 		
 	colorInRGB: function () {
-			var clr = hsl2rgb(this.hue,this.saturation,this.lightness);
-			return "rgb("+clr.r+","+clr.g+","+clr.b+")";
+			var f = hsl2rgb(this.hue,this.saturation,this.lightness);
+			return "rgb("+f.r+","+f.g+","+f.b+")";
+	},
+	
+	colorInHEX: function () {
+		var d = hsl2rgb(this.hue,this.saturation,this.lightness);
+		return rgbToHex(d.r,d.g,d.b);
 	}	
 
 };
@@ -100,7 +105,14 @@ var a = document.createElement('li');
 pallet.appendChild(a);
 a.className ='color';
 a.style.backgroundColor=currentColor.colorAsString();
-a.innerHTML=currentColor.colorInRGB();
+a.innerHTML=currentColor.colorInRGB()+"<hr>"+"#"+currentColor.colorInHEX();
+if (currentColor.lightness<=50) {
+	a.style.color="white";
+}
+else {
+	a.style.color="black";
+	
+}
 }
 
 //==================================================
@@ -160,4 +172,17 @@ function hsl2rgb (h, s, l) {
 
     return { r: r, g: g, b: b }
 
+}
+
+
+
+
+
+function rgbToHex(R,G,B) {return toHex(R)+toHex(G)+toHex(B)}
+function toHex(n) {
+ n = parseInt(n,10);
+ if (isNaN(n)) return "00";
+ n = Math.max(0,Math.min(n,255));
+ return "0123456789ABCDEF".charAt((n-n%16)/16)
+      + "0123456789ABCDEF".charAt(n%16);
 }
