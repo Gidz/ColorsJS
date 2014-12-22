@@ -221,6 +221,7 @@ var c=document.getElementById("popUpContent");
 
 help.onclick = function () {
 	popUp.style.display='block';
+	display.style.display='none';
 	h.innerHTML="HELP TEXT";
 	c.innerHTML="";
 }
