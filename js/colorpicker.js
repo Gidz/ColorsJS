@@ -15,6 +15,8 @@ var container = document.getElementById("container");
 var display = document.getElementById("colorName");
 var details = document.getElementById("details");
 var pallet = document.getElementById("colorPallet");
+var mover = document.getElementById("cph");
+
 
 
 var currentColor={
@@ -85,8 +87,7 @@ setInterval("updateColor()", 10);
 //==================================================
 //Function to pick color
 //==================================================
-document.onclick = function(){
-
+container.onclick = function(){
 var a = document.createElement('li');
 pallet.appendChild(a);
 a.className ='color';

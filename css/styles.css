@@ -8,7 +8,7 @@ height: 100%;
 #container
 {
 min-width: 100%;
-min-height: 100%;
+min-height: 80%;
 }
 #colorName
 {
@@ -27,24 +27,32 @@ min-height: 100%;
 #colorPallet
 {
     position:absolute;
-     width:50%;
+     width:auto;
 height:15%;
 z-index:15;
-     top:0%;
+		
+     bottom:0%;
      left:0%;
-     /*background-color: rgba(255,255,255,1);*/
+     top: auto;
+     background-color: rgba(255,255,255,0.5);
  list-style:none;
     padding-left:0;
-    
-   
-     
+      
 }
+#cph
+{
+background-color: black;
+padding: 0.5% 0px 0.5% 0px;
+color: white;
+z-index: 25;
+}
+
 .color{
 position:relative;
 display: inline-block;
-width:35%;
+width:30	%;
 height:100%;
 z-index:15;
 background-color: rgba(10,50,60,0.5);
-
 }
+
