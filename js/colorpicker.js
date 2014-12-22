@@ -115,7 +115,7 @@ else {
 }
 }
 
-container.onclick = function(){
+container.onclick = function pickUp(){
 var a = document.createElement('li');
 pallet.appendChild(a);
 a.className ='color';
@@ -222,11 +222,54 @@ var c=document.getElementById("popUpContent");
 help.onclick = function () {
 	popUp.style.display='block';
 	display.style.display='none';
-	h.innerHTML="HELP TEXT";
-	c.innerHTML="";
+	document.getElementById("cph").style.display="none";
+	
+	
 }
 closeBtn.onclick = function () {
 	popUp.style.display='none';
-	
+	display.style.display='block';
+	document.getElementById("cph").style.display='block';
+}
+
+//Keyboard Events
+document.onkeydown = checkKey;
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+        currentColor.saturation+=1;
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+        currentColor.saturation-=1;
+    }
+    else if (e.keyCode == '37') {
+       // left arrow
+       
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+       
+    }
+    else if (e.keyCode == '13') {
+    	//Enter key
+    	//
+    	var a = document.createElement('li');
+pallet.appendChild(a);
+a.className ='color';
+a.style.backgroundColor=currentColor.colorInHSL();
+a.innerHTML=currentColor.colorInRGB()+"<hr>"+"#"+currentColor.colorInHEX();
+if (currentColor.lightness<=50) {
+	a.style.color="white";
+}
+else {
+	a.style.color="black";
+}
+    	//
+    }
+
 }
 
