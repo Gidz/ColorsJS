@@ -122,7 +122,8 @@ else {
 }
 }
 
-container.onclick = function pickUp(){
+//This function creates li element and shades it with choosen color
+var addColor = function () {  
 var a = document.createElement('li');
 pallet.appendChild(a);
 a.className ='color';
@@ -135,15 +136,18 @@ else {
 	a.style.color="black";
 }
 }
+
+container.onclick = function pickUp(){
+addColor();
+}
+
+
+
 //Not wanting to lose a small range of colors in the top portion
 colorDisplay.onclick = function(){
-var a = document.createElement('li');
-pallet.appendChild(a);
-a.className ='color';
-a.style.backgroundColor=currentColor.colorInHSL();
-a.innerHTML=currentColor.colorInRGB()+"<hr>"+"#"+currentColor.colorInHEX();
-a.style.color="white";
+addColor();
 }
+
 
 
 
@@ -276,19 +280,7 @@ function checkKey(e) {
        
     }
     else if (e.keyCode == '13') {
-    	//Enter key
-    	//
-    	var a = document.createElement('li');
-pallet.appendChild(a);
-a.className ='color';
-a.style.backgroundColor=currentColor.colorInHSL();
-a.innerHTML=currentColor.colorInRGB()+"<hr>"+"#"+currentColor.colorInHEX();
-if (currentColor.lightness<=50) {
-	a.style.color="white";
-}
-else {
-	a.style.color="black";
-}
+			addColor();
     	//
     }
 
