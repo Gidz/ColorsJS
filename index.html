@@ -4,16 +4,19 @@
 <meta charset="utf-8" />
 <title>COLORS JS</title>
 <link href="css/styles.css" rel="stylesheet">
+
+<script type="text/javascript" src="js/html2canvas.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
 </head>
-<body onload="main()"> 
+<body> 
 <div id="container"></div>
 <div id="colorName"></div>
 
 <div id="cph" >
-
-<a id="help">Help</a> 
-
-
+<a id="help">?</a>
+ | 
+<a id="download">Download</a> 
 </div>
 
 <ul id="colorPallet" draggable="false">
@@ -24,10 +27,8 @@
 <!-- The PopUp -->
 <div id="screenCover">
 <div id="popUp">
-<div id="popUpClose">CLOSE</div>
+<div id="popUpClose">X</div>
 <div id="popUpHeading">HELP</div>
-<hr class="hrAlt">
-
 <div id="popUpContent">
 <p>The intent of this app is to enable the user to quickly identify the color combinations needed to kickstart any project</p><br><br>
 <ul>
@@ -39,6 +40,24 @@
 
 </div>
 </div>
+
+<!-- The screenshot part -->
+<script>
+$( '#download' ).click( function () {
+alert('WORKIN	');
+html2canvas($('#colorPallet')).then(function(canvas) {
+    document.body.appendChild(canvas);
+   
+var dataUrl = canvas.toDataURL();
+window.open(dataUrl, "toDataURL() image");
+});	
+});
+
+
+
+
+</script>
+
 
 <script src="js/colorpicker.js"></script>
 
