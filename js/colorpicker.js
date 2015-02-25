@@ -144,6 +144,20 @@ a.style.backgroundColor=currentColor.colorInHSL();
 a.innerHTML=currentColor.colorInRGB()+"<hr>"+"#"+currentColor.colorInHEX();
 a.style.color="white";
 }
+
+
+
+
+//==================================================
+//Function to remove color from the pallet
+//(onclick function)
+//==================================================
+$(function () {
+    $('#colorPallet').on('dblclick', 'li', function () {
+                $(this).remove();
+    });
+});
+
 //==================================================
 //Function to convert HSL to RGB
 //This script is taken from

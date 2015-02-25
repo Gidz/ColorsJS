@@ -4,9 +4,8 @@
 <meta charset="utf-8" />
 <title>COLORS JS</title>
 <link href="css/styles.css" rel="stylesheet">
-
-<script type="text/javascript" src="js/html2canvas.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/html2canvas.js"></script>
 
 </head>
 <body> 
@@ -14,7 +13,7 @@
 <div id="colorName"></div>
 
 <div id="cph" >
-<a id="help">?</a>
+<a id="help">Help</a>
  | 
 <a id="download">Download</a> 
 </div>
@@ -35,6 +34,8 @@
 <li>Move the mouse across the screen to control the hue value.</li><br><br>
 <li>Use Up / Down Arrows to control the saturation value.</li><br><br>
 <li>Use Enter key or Mouse Left Key to Save the color to pallet.</li><br><br>
+<li>Double click on the color to remove it</li><br><br>
+<li>Click on Download to Download the color to pallet.</li><br><br>
 </ul>
 </div>
 
@@ -42,22 +43,18 @@
 </div>
 
 <!-- The screenshot part -->
+
 <script>
 $( '#download' ).click( function () {
-alert('WORKIN	');
 html2canvas($('#colorPallet')).then(function(canvas) {
-    document.body.appendChild(canvas);
-   
-var dataUrl = canvas.toDataURL();
-window.open(dataUrl, "toDataURL() image");
-});	
+document.body.appendChild(canvas); 
+var dataUrl = canvas.toDataURL('image/png');
+window.open(dataUrl);
 });
-
-
+});	
 
 
 </script>
-
 
 <script src="js/colorpicker.js"></script>
 
